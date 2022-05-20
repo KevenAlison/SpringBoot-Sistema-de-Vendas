@@ -1,6 +1,7 @@
 package io.github.kevenalison.domain.entity;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name= "tb_cliente")
@@ -13,6 +14,13 @@ public class Cliente {
 
     @Column(name = "nome", length = 100)
     private String nome;
+
+    @OneToMany(mappedBy = "cliente")
+    private Set<Pedido> pedidos;
+
+    public Cliente(){
+
+    }
 
     public Integer getId() {
         return id;
