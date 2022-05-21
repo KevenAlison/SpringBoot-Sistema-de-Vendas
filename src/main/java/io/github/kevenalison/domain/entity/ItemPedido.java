@@ -8,7 +8,7 @@ public class ItemPedido {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id");
+    @Column(name = "id")
     private Integer id;
 
     @ManyToOne

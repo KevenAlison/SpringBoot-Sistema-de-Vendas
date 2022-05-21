@@ -1,6 +1,4 @@
-package io.github.kevenalison.domain.repositorio;
-
-import io.github.kevenalison.domain.entity.Cliente;
+package io.github.kevenalison.domain.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 
