@@ -16,6 +16,17 @@ public class ClienteController {
         clientesRepository = cliente;
     }
 
+    //BUSCAR CLIENTE POR ID
+    @GetMapping("/api/clientes/{id}")
+    @ResponseBody
+    public ResponseEntity getClienteById( @PathVariable Integer id){
+       Optional<Cliente> cliente = clientesRepository.findById(id);
+       if(cliente.isPresent()){
+           return ResponseEntity.ok(cliente.get());
+       }
+       return ResponseEntity.notFound().build();
+    }
+
     //Adicionar cliente
     @PostMapping("/api/clientes")
     @ResponseBody
@@ -24,5 +35,6 @@ public class ClienteController {
         return ResponseEntity.ok(clienteSalvo);
     }
 
- 
+
+
 }
