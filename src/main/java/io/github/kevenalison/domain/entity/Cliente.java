@@ -18,8 +18,17 @@ public class Cliente {
     @OneToMany(mappedBy = "cliente")
     private Set<Pedido> pedidos;
 
-    public Cliente(){
+    public Cliente() {
 
+    }
+
+    public Set<Pedido> getPedidos() {
+        return pedidos;
+    }
+
+    public Cliente(Integer id, String nome) {
+        this.id = id;
+        this.nome = nome;
     }
 
     public Integer getId() {
